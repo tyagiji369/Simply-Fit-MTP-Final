@@ -1,0 +1,137 @@
+{
+  "A1_ewma_attenuation_noise_free_line": [
+    {
+      "n_days": 14,
+      "true_kcal": -550.0,
+      "v1_research_kcal": -448.0,
+      "v1_research_bias_pct": 18.5,
+      "v1_app_kcal": -560.0,
+      "v1_app_bias_pct": -1.8
+    },
+    {
+      "n_days": 21,
+      "true_kcal": -550.0,
+      "v1_research_kcal": -493.0,
+      "v1_research_bias_pct": 10.4,
+      "v1_app_kcal": -554.8,
+      "v1_app_bias_pct": -0.9
+    },
+    {
+      "n_days": 28,
+      "true_kcal": -550.0,
+      "v1_research_kcal": -517.6,
+      "v1_research_bias_pct": 5.9,
+      "v1_app_kcal": -557.4,
+      "v1_app_bias_pct": -1.3
+    },
+    {
+      "n_days": 56,
+      "true_kcal": -550.0,
+      "v1_research_kcal": -545.4,
+      "v1_research_bias_pct": 0.8,
+      "v1_app_kcal": -557.4,
+      "v1_app_bias_pct": -1.3
+    },
+    {
+      "n_days": 90,
+      "true_kcal": -550.0,
+      "v1_research_kcal": -550.7,
+      "v1_research_bias_pct": -0.1,
+      "v1_app_kcal": -555.7,
+      "v1_app_bias_pct": -1.0
+    }
+  ],
+  "A2_two_code_paths_disagree": {
+    "n_series": 300,
+    "n_days": 28,
+    "mean_abs_disagreement_kcal": 48.9,
+    "p95_abs_disagreement_kcal": 116.5,
+    "max_abs_disagreement_kcal": 193.6
+  },
+  "A3_missing_days_time_compression": [
+    {
+      "missing_rate": 0.0,
+      "true_kcal": -550.0,
+      "v1_app_mean_kcal": -559.2,
+      "bias_pct": -1.7
+    },
+    {
+      "missing_rate": 0.2,
+      "true_kcal": -550.0,
+      "v1_app_mean_kcal": -696.5,
+      "bias_pct": -26.6
+    },
+    {
+      "missing_rate": 0.4,
+      "true_kcal": -550.0,
+      "v1_app_mean_kcal": -905.7,
+      "bias_pct": -64.7
+    }
+  ],
+  "A4_isolation_forest_on_error_free_data": {
+    "n_series": 300,
+    "n_days": 28,
+    "mean_fraction_flagged_on_error_free_data": 0.107,
+    "share_of_logs_whose_past_flags_change_after_one_new_reading": 0.173
+  },
+  "A5_original_ci_coverage": {
+    "white_noise": {
+      "n_series": 2000,
+      "n_days": 28,
+      "nominal": 0.95,
+      "empirical_coverage_of_truth": 0.419,
+      "mean_ci_width_kcal": 101.3,
+      "actual_rmse_kcal": 88.1
+    },
+    "ar1_phi_0.6": {
+      "n_series": 2000,
+      "n_days": 28,
+      "nominal": 0.95,
+      "empirical_coverage_of_truth": 0.377,
+      "mean_ci_width_kcal": 128.9,
+      "actual_rmse_kcal": 127.5
+    }
+  },
+  "A6_rolling_5day_bars_at_true_maintenance": {
+    "true_kcal_every_day": 0.0,
+    "sd_of_displayed_bars_kcal": 858.0,
+    "share_of_bars_beyond_plus_minus_500_kcal": 0.537
+  },
+  "A7_on_track_message_logic": [
+    {
+      "goal": "lose",
+      "target_kg_per_week": -0.5,
+      "actual_kg_per_week": -0.9,
+      "situation": "losing FASTER than planned",
+      "original_message": "Slightly behind target. Try reducing kcal"
+    },
+    {
+      "goal": "lose",
+      "target_kg_per_week": -0.5,
+      "actual_kg_per_week": 0.2,
+      "situation": "GAINING weight on a loss goal",
+      "original_message": "Ahead of schedule. Maintain your current pace."
+    }
+  ],
+  "A9_fallback_forecast": {
+    "true_slope_kg_per_day": 0.1,
+    "fallback_implied_slope": 0.1,
+    "fallback_day7_error_kg": -0.1,
+    "evaluated_linear_baseline_day7_error_kg": 0.0,
+    "note": "fallback divides a 6-day difference by 7 and uses only 2 of the 7 points; the baseline reported in results/model_evaluation.json is a 14-day OLS fit"
+  },
+  "A11_circular_validation_of_readme_claim": {
+    "n_users": 200,
+    "n_days": 90,
+    "instrumented_copy_reproduces_original_logs_exactly": true,
+    "median_abs_error_vs_polyfit_of_same_data_kcal": 7.3,
+    "median_abs_error_vs_TRUE_simulated_balance_kcal": 11.0,
+    "p90_abs_error_vs_TRUE_simulated_balance_kcal": 32.9,
+    "bias_vs_TRUE_kcal": 0.7
+  },
+  "A12_original_generator_noise": {
+    "n_users": 200,
+    "mean_lag1_autocorrelation_of_detrended_readings": -0.013,
+    "note": "about 0 => scatter is independent day to day; no missing days, no gross errors, one near-linear trajectory shape"
+  }
+}

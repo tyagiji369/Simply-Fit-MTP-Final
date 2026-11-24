@@ -1,0 +1,9 @@
+# Full development environment: the app plus tests, experiments and the
+# optional LSTM retraining.
+-r requirements.txt
+pytest>=8.0
+statsmodels>=0.14      # reference implementations the tests check against
+tensorflow-cpu>=2.16; platform_system != "Darwin"
+tensorflow>=2.16; platform_system == "Darwin"  # optional LSTM on macOS
+jupyter>=1.0           # optional: only to open the historical notebooks
+nbconvert>=7.0

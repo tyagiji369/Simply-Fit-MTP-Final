@@ -1,0 +1,82 @@
+{
+  "splits": {
+    "development": [
+      421031,
+      480
+    ],
+    "validation": [
+      636017,
+      640
+    ],
+    "final": [
+      853049,
+      960
+    ],
+    "sensitivity": [
+      974053,
+      100
+    ],
+    "shift": [
+      1090017,
+      480
+    ]
+  },
+  "durations": [
+    14,
+    28,
+    42,
+    56,
+    84
+  ],
+  "cadences": [
+    1,
+    1,
+    2,
+    3
+  ],
+  "noise": [
+    0.12,
+    0.28,
+    0.5
+  ],
+  "outliers": [
+    0,
+    0.025,
+    0.08
+  ],
+  "density": [
+    5200,
+    9200
+  ],
+  "water_decay_days": {
+    "development": [
+      2,
+      6
+    ],
+    "validation": [
+      2,
+      6
+    ],
+    "final": [
+      2,
+      6
+    ],
+    "sensitivity": [
+      2,
+      6
+    ],
+    "shift": [
+      8,
+      14
+    ]
+  },
+  "coverage": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "desired_eligible_retention": 0.75,
+  "process_sd": 0.004,
+  "innovation_cutoff": 2.5,
+  "bootstrap_draws": 199
+}

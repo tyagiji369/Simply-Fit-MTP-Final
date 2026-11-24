@@ -1,0 +1,13 @@
+# Core runtime dependencies for the Streamlit app.
+# TensorFlow is NOT needed: the app's default forecast uses the recent weight level and the
+# optional LSTM is off by default. google-genai is only used when a Gemini
+# API key is supplied (the coach otherwise answers from templates).
+streamlit>=1.35
+matplotlib>=3.8
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.4
+scipy>=1.11
+python-dotenv>=1.0
+google-genai>=3.6.1
+pydantic>=2.0

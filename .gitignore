@@ -1,0 +1,21 @@
+# environments & caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# secrets
+.env
+
+# OS
+.DS_Store
+
+# raw NHANES source downloads (the cleaned extract IS committed):
+# re-derive it with notebooks/05 or download from
+# https://wwwn.cdc.gov/nchs/nhanes/ (DEMO_J.XPT, BMX_J.XPT)
+data/raw/
+
+# smoke-run outputs of the experiment pipeline (full results in results/experiments/ ARE committed)
+results/experiments/quick/

@@ -1,0 +1,1 @@
+Streamlit server launched on loopback. Health endpoint returned ok, root endpoint returned HTTP 200. Interactive flows covered by Streamlit AppTest.

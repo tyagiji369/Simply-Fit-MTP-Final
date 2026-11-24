@@ -1,0 +1,57 @@
+{
+  "hydration": {
+    "title": "NHS · Water, drinks and hydration",
+    "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/",
+    "note": "For most people, a general guide is 6–8 cups or glasses of drinks daily. Tea, coffee and milk also count. Heat or prolonged physical activity may increase fluid needs. This population guide is unsuitable for setting a personal fluid restriction."
+  },
+  "kidney": {
+    "title": "NIDDK · Healthy eating for adults with chronic kidney disease",
+    "url": "https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/healthy-eating-adults-chronic-kidney-disease",
+    "note": "Kidney disease can change fluid and nutrient needs. Ask the kidney care team how much fluid to have. A renal dietitian can tailor protein, sodium, potassium and phosphorus advice to the individual."
+  },
+  "diabetes": {
+    "title": "CDC · Diabetes meal planning",
+    "url": "https://www.cdc.gov/diabetes/healthy-eating/diabetes-meal-planning.html",
+    "note": "A diabetes meal plan accounts for medicines, goals, food preferences and lifestyle. Carbohydrate counting and the plate method can help with planning. Ask the care team for individual guidance."
+  },
+  "pressure": {
+    "title": "NHLBI · DASH eating plan",
+    "url": "https://www.nhlbi.nih.gov/health/dash-eating-plan",
+    "note": "DASH emphasizes vegetables, fruit, whole grains and lower-sodium choices to support blood pressure management. It limits foods high in saturated fat."
+  },
+  "cholesterol": {
+    "title": "NHS · Lowering cholesterol",
+    "url": "https://www.nhs.uk/conditions/high-cholesterol/how-to-lower-your-cholesterol/",
+    "note": "Reducing foods high in saturated fat can help lower cholesterol."
+  },
+  "thyroid": {
+    "title": "NIDDK · Hypothyroidism",
+    "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/hypothyroidism",
+    "note": "Large amounts of iodine, including from kelp supplements, can worsen hypothyroidism for some people with autoimmune thyroid disease. Discuss supplements with a clinician."
+  },
+  "liver": {
+    "title": "NIDDK · Eating and nutrition for NAFLD",
+    "url": "https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/eating-diet-nutrition",
+    "note": "For people with fatty liver disease who also have overweight or obesity, a clinician may recommend gradual weight loss."
+  },
+  "pcos": {
+    "title": "NHS · PMOS (PCOS)",
+    "url": "https://www.nhs.uk/conditions/polyendocrine-metabolic-ovarian-syndrome-pmos/",
+    "note": "Symptoms and care needs vary in PCOS. Treatments and lifestyle changes may help manage symptoms."
+  },
+  "prediabetes": {
+    "title": "CDC · Prediabetes prevention",
+    "url": "https://www.cdc.gov/diabetes/prevention-type-2/prediabetes-prevent-type-2.html",
+    "note": "Regular physical activity and changes to eating habits can help lower the risk of progressing from prediabetes to type 2 diabetes."
+  },
+  "walking": {
+    "title": "Mayo Clinic · Health benefits of counting steps",
+    "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-qa-health-benefits-of-counting-steps/",
+    "note": "There is no universal daily step count. Benefits occur below 10,000 steps. For a general starting point, track your usual daily steps with a phone or pedometer and add short walks gradually at a comfortable pace. Steps from separate walks throughout the day count. A step count alone does not establish a personal weight-loss target."
+  },
+  "protein_shakes": {
+    "title": "Mayo Clinic · Protein shakes and weight loss",
+    "url": "https://www.mayoclinic.org/healthy-lifestyle/weight-loss/expert-answers/protein-shakes/faq-20058335",
+    "note": "Protein shakes, including whey shakes, are optional for weight loss. Their effect depends in part on what they replace: substituting a shake for a higher-calorie choice may lower total intake, while adding one to the usual diet adds calories. Whole foods can supply protein too. Studies of higher-protein diets do not establish a unique slimming effect of whey. This evidence does not establish an individual protein dose."
+  }
+}

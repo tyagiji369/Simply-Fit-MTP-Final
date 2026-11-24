@@ -1,0 +1,14 @@
+Linux-6.18.57-x86_64-with-glibc2.41
+Python 3.12.14
+numpy==2.3.5
+scipy==1.17.0
+pandas==2.2.3
+matplotlib==3.10.8
+scikit-learn==1.8.0
+streamlit==1.67.0
+python-dotenv==1.2.2
+google-genai==3.6.1
+pytest==9.2.0
+statsmodels==0.15.0
+tensorflow-cpu==2.21.0
+keras==3.15.1

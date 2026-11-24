@@ -1,0 +1,43 @@
+{
+  "historical_saved_file": {
+    "source": "results/model_evaluation.json (not re-run)",
+    "trained_at": "2026-08-25T15:25:13+00:00",
+    "mae_kg": {
+      "lstm": 0.5372118624914259,
+      "persistence": 0.4683142857142856,
+      "linear": 0.40070232862375704
+    },
+    "n_test_windows": 6000
+  },
+  "reproduction_same_cohort_and_split": {
+    "n_test_windows": 6000,
+    "mae_kg": {
+      "persistence": 0.4683142857142856,
+      "linear_14day_ols": 0.40070232862375704,
+      "linear_shared_core": 0.40070232862375704,
+      "level_mean_of_last_3 (app default)": 0.39468968253968256,
+      "saved_lstm_with_training_scaler": 0.5372118624914259
+    },
+    "baselines_match_saved_file": true
+  },
+  "deployment_mismatch_of_saved_lstm": {
+    "mae_kg": {
+      "as_evaluated (scaler from first 72 days)": 0.5372118624914259,
+      "as_deployed, 14-day log (scaler from the 14 inputs)": 0.41974350527808774,
+      "as_deployed, full history (scaler from all days so far)": 0.4852057497660318,
+      "original_fallback_2_point": 0.6356857142857142
+    }
+  },
+  "corrected_optional_lstm_window_centred": {
+    "mae_kg": {
+      "lstm": 0.3709356197616872,
+      "persistence": 0.4683142857142856,
+      "linear": 0.40070232862375704,
+      "level": 0.39468968253968256
+    },
+    "epochs_run": 7,
+    "n_test_windows": 6000,
+    "model_file": "models/simply_fit_lstm_v2.keras"
+  },
+  "conclusion": "On THIS cohort (the internship generator: independent day-to-day noise, near-linear trajectories) the corrected LSTM has the lowest error and the linear trend is second. On the scenario simulator the ranking is different (see results/experiments/tables/forecast_*.md). The saved internship figure for the LSTM (0.537 kg) was measured with a different normalisation from the one the app applied, so it did not describe the deployed model. All data are SYNTHETIC."
+}

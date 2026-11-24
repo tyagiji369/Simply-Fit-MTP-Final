@@ -1,0 +1,94 @@
+{
+  "_comment": "Scenario and condition definitions for src/simulation.py. All values are SIMULATION ASSUMPTIONS, documented in SYNTHETIC_DATA_METHODOLOGY.md. Units: kcal/day for energy, kg for weight, days for time. Ranges [a, b] are sampled uniformly per simulated user.",
+
+  "n_days": 90,
+
+  "seeds": {
+    "_comment": "Development seeds are used for every design decision (method choice, window, interval method, thresholds). Evaluation seeds are used once, for the reported results. The two ranges never overlap.",
+    "development_base": 100000,
+    "evaluation_base": 900000
+  },
+
+  "scenarios": {
+    "stable": {
+      "description": "Energy balance planned at zero for the whole period.",
+      "segments": [{"until_frac": 1.0, "kcal": [0, 0]}]
+    },
+    "sustained_deficit": {
+      "description": "Constant planned deficit.",
+      "segments": [{"until_frac": 1.0, "kcal": [-700, -250]}]
+    },
+    "sustained_surplus": {
+      "description": "Constant planned surplus.",
+      "segments": [{"until_frac": 1.0, "kcal": [200, 500]}]
+    },
+    "deficit_to_maintenance": {
+      "description": "Planned deficit that stops abruptly (diet ends) at a random day.",
+      "change_day": [35, 75],
+      "segments": [{"until_frac": "change", "kcal": [-700, -300]}, {"until_frac": 1.0, "kcal": [0, 0]}]
+    },
+    "deficit_to_surplus": {
+      "description": "Planned deficit followed by a surplus (rebound) from a random day.",
+      "change_day": [35, 75],
+      "segments": [{"until_frac": "change", "kcal": [-700, -300]}, {"until_frac": 1.0, "kcal": [200, 500]}]
+    },
+    "gradual_drift": {
+      "description": "Planned balance moves linearly from a deficit to roughly maintenance over the period (slowly fading adherence).",
+      "ramp": {"start_kcal": [-700, -350], "end_kcal": [-100, 100]}
+    }
+  },
+
+  "conditions": {
+    "_comment": "Observation conditions. noise_scale multiplies the water-weight and scale-error standard deviations. missing_rate is the fraction of days with no reading. outlier_rate is the per-reading probability of a gross error.",
+    "clean":        {"noise_scale": 1.0, "missing_rate": 0.0,  "outlier_rate": 0.0},
+    "base":         {"noise_scale": 1.0, "missing_rate": 0.10, "outlier_rate": 0.02},
+    "noise_low":    {"noise_scale": 0.5, "missing_rate": 0.10, "outlier_rate": 0.02},
+    "noise_high":   {"noise_scale": 1.6, "missing_rate": 0.10, "outlier_rate": 0.02},
+    "missing_0":    {"noise_scale": 1.0, "missing_rate": 0.0,  "outlier_rate": 0.02},
+    "missing_25":   {"noise_scale": 1.0, "missing_rate": 0.25, "outlier_rate": 0.02},
+    "missing_45":   {"noise_scale": 1.0, "missing_rate": 0.45, "outlier_rate": 0.02},
+    "outliers_0":   {"noise_scale": 1.0, "missing_rate": 0.10, "outlier_rate": 0.0},
+    "outliers_5":   {"noise_scale": 1.0, "missing_rate": 0.10, "outlier_rate": 0.05},
+    "outliers_10":  {"noise_scale": 1.0, "missing_rate": 0.10, "outlier_rate": 0.10}
+  },
+
+  "mechanism_A": {
+    "_comment": "Ledger model: tissue weight changes by (energy balance / kcal_per_kg) each day. This shares the estimator's conversion assumption on purpose.",
+    "kcal_per_kg": 7700,
+    "daily_balance_sd_kcal": [100, 300],
+    "water_sd_kg": [0.20, 0.60],
+    "water_ar1_phi": [0.30, 0.80],
+    "scale_error_sd_kg": [0.05, 0.15],
+    "outlier_magnitude_kg": [1.0, 3.0],
+    "rounding_kg": 0.1
+  },
+
+  "mechanism_B": {
+    "_comment": "Two-compartment model with adaptive expenditure. Scenario kcal values are PLANNED INTAKE offsets from initial maintenance; the realised energy balance then evolves as expenditure responds. This model deliberately does NOT share the estimator's 7700 kcal/kg assumption.",
+    "fat_energy_density_kcal_per_kg": 9400,
+    "lean_energy_density_kcal_per_kg": 1800,
+    "forbes_constant_kg": 10.4,
+    "expenditure_per_kg_fat_kcal": 3.2,
+    "expenditure_per_kg_lean_kcal": 22.0,
+    "activity_per_kg_body_kcal": 7.0,
+    "thermic_effect_fraction": 0.10,
+    "adaptive_thermogenesis_fraction": 0.14,
+    "adaptive_thermogenesis_tau_days": 14,
+    "weekend_extra_intake_kcal": [0, 400],
+    "feast_day_probability": 0.08,
+    "feast_day_extra_kcal": [600, 1200],
+    "daily_intake_sd_kcal": [100, 250],
+    "glycogen_water_kg_per_1000kcal": [0.3, 0.9],
+    "glycogen_tau_days": 3,
+    "water_sd_kg": [0.20, 0.55],
+    "water_ar1_phi": [0.40, 0.85],
+    "water_innovation_t_dof": 4,
+    "slow_cycle_probability": 0.30,
+    "slow_cycle_period_days": [24, 35],
+    "slow_cycle_amplitude_kg": [0.3, 0.8],
+    "scale_error_sd_kg": [0.05, 0.15],
+    "outlier_magnitude_kg": [1.0, 3.0],
+    "missing_run_length_days": [2, 6],
+    "rounding_kg": 0.1
+  }
+}

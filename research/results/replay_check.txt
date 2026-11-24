@@ -1,0 +1,3 @@
+final: 960 regenerated logs matched the app decision; all 580 displayed estimates and bounds matched the archived experiments.
+shift: 480 regenerated logs matched the app decision; all 272 displayed estimates and bounds matched the archived experiments.
+All original MTP results files matched the input archive byte for byte.
